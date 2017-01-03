@@ -21,11 +21,11 @@ The Facebook CTF is a platform to host Jeopardy and “King of the Hill” style
 
 # Installation
 
-The Facebook CTF platform can be provisioned in development or production environments. Note that the *only* supported system is 64 bit Ubuntu 14.04. Ubuntu 16.04 is not supported at this time, nor is 32 bit. We will accept PRs to support other platforms, but we will not officially support those platforms if there are any issues.
+The Facebook CTF platform can be provisioned in development or production environments. Kali Linux is supported. 
 
 ### Development
 
-While it is possible to do development on a physical Ubuntu machine (and possibly other Linux distros as well), we highly recommend doing all development on a Vagrant VM. First, install [VirtualBox](https://www.virtualbox.org/wiki/Downloads) and [Vagrant](https://www.vagrantup.com/downloads.html). Then run:
+While it is possible to do development on a physical Kali machine (and possibly other Linux distros as well), we highly recommend doing all development on a Vagrant VM. First, install [VirtualBox](https://www.virtualbox.org/wiki/Downloads) and [Vagrant](https://www.vagrantup.com/downloads.html). Then run:
 
 ```bash
 git clone https://github.com/facebook/fbctf
@@ -33,7 +33,7 @@ cd fbctf
 vagrant up
 ```
 
-This will create a local virtual machine with Ubuntu 14.04 using Vagrant and VirtualBox as the provider. The provisioning script will install all necessary software to the platform locally, using self-signed certificates. The platform will be available on [https://10.10.10.5](https://10.10.10.5) by default. You can find any error logs in `/var/log/hhvm/error.log`. If you would like to change this IP address, you can find the configuration for it in the `Vagrantfile`.
+This will create a local virtual machine with Kali Linux using Vagrant. The provisioning script will install all necessary software to the platform locally, using self-signed certificates. The platform will be available on [https://10.10.10.5](https://10.10.10.5) by default. You can find any error logs in `/var/log/hhvm/error.log`. If you would like to change this IP address, you can find the configuration for it in the `Vagrantfile`.
 
 Once the VM has started, go to the URL/IP of the server (10.10.10.5 in the default case). Click the "Login" link at the top right, enter the 'admin' as the team name and 'password' as the password (without quotes). You will be redirected to the administration page. At the bottom of the navigation bar on the left, there will be a link to go to the gameboard.
 
@@ -61,7 +61,7 @@ cd fbctf
 
 ### Production
 Please note that your machine needs to have at least 2GB of RAM, otherwise the composer part of the installation will fail.
-The target system needs to be 64 bit Ubuntu 14.04. Run the following commands:
+Run the following commands:
 
 ```bash
 sudo apt-get update
